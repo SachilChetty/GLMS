@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GLMS.Models.ServiceRequest>
+@{
+
+<h2>Service Requests</h2>
+
+<a asp-action="Create" class="btn btn-warning mb-3">Create Request</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Contract ID</th>
+            <th>Description</th>
+            <th>Cost (ZAR)</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.ContractId</td>
+                <td>@request.Description</td>
+                <td>@request.CostZAR</td>
+                <td>@request.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

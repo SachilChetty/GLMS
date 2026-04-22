@@ -15,7 +15,7 @@ namespace GLMS.Services
         {
             var contract = _context.Contracts.Find(contractId);
 
-            return contract != null && contract.Status == "Active";
+            return contract.Status == "Active";
         }
     }
 }

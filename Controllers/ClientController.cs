@@ -13,9 +13,16 @@ namespace GLMS.Controllers
             _context = context;
         }
 
-        public IActionResult Index() => View(_context.Clients.ToList());
+        public IActionResult Index()
+        {
+            var clients = _context.Clients.ToList();
+            return View(clients);
+        }
 
-        public IActionResult Create() => View();
+        public IActionResult Create()
+        {
+            return View(new Client());
+        }
 
         [HttpPost]
         public IActionResult Create(Client client)

@@ -1,17 +1,13 @@
 ﻿namespace GLMS.Models
-{
-    namespace GLMS.Models
     {
-        public class ServiceRequest
-        {
-            public int Id { get; set; }
+    public class ServiceRequest
+    {
+        public int Id { get; set; }
+        public int ContractId { get; set; }
+        public Contract? Contract { get; set; }
 
-            public int ContractId { get; set; }
-            public Contract? Contract { get; set; }
-
-            public string? Description { get; set; }
-            public decimal CostZAR { get; set; }
-            public string? Status { get; set; }
-        }
+        public string Description { get; set; }
+        public decimal CostZAR { get; set; }
+        public string Status { get; set; } = "Pending"; 
     }
 }

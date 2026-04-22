@@ -1,19 +1,23 @@
-﻿@page
-@model GLMS.Views.ServiceRequest.CreateModel
-@{
-    <form asp-action="Create">
+﻿@model GLMS.Models.ServiceRequest
 
-        <select name="ContractId">
-            @foreach (var c in ViewBag.Contracts)
+<h2>Create Service Request</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label>Select Contract</label>
+    <select asp-for="ContractId" class="form-control">
+        @if (ViewBag.Contracts != null)
+        {
+            foreach (var c in ViewBag.Contracts)
             {
-                <option value="@c.Id">@c.Status</option>
+                <option value="@c.Id">Contract #@c.Id (@c.Status)</option>
             }
-        </select>
+        }
+    </select>
 
-        <input type="text" name="Description" />
-        <input type="number" name="usdAmount" />
+    <input asp-for="Description" placeholder="Description" class="form-control" />
+    <input type="number" step="0.01" name="usdAmount" placeholder="USD Amount" class="form-control" />
 
-        <button>Create</button>
-
-    </form>
-}
+    <button type="submit">Create Request</button>
+</form>

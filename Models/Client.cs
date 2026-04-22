@@ -9,6 +9,6 @@ namespace GLMS.Models
         public string ContactDetails { get; set; }
         public string Region { get; set; }
 
-        public List<Contract> Contracts { get; set; }
+        public List<Contract>? Contracts { get; set; }
     }
 }

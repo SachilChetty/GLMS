@@ -1,23 +1,20 @@
-﻿using Newtonsoft.Json;
-
-namespace GLMS.Services
+﻿namespace GLMS.Services
 {
     public class CurrencyService
     {
-        private readonly HttpClient _client;
+        private readonly HttpClient _httpClient;
 
-        public CurrencyService(HttpClient client)
+        // The constructor MUST take HttpClient as a parameter
+        public CurrencyService(HttpClient httpClient)
         {
-            _client = client;
+            _httpClient = httpClient;
         }
 
-        public async Task<decimal> ConvertUsdToZar(decimal usd)
+        public async Task<decimal> ConvertUsdToZar(decimal usdAmount)
         {
-            var response = await _client.GetStringAsync("https://api.exchangerate-api.com/v4/latest/USD");
-            dynamic data = JsonConvert.DeserializeObject(response);
-            decimal rate = data.rates.ZAR;
-
-            return usd * rate;
+            
+            decimal exchangeRate = 18.50m;
+            return usdAmount * exchangeRate;
         }
     }
 }

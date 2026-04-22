@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GLMS.Views.ServiceRequest
+namespace GLMS.Views.Client
 {
-    public class CreateModel : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {
