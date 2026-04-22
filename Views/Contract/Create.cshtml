@@ -1,0 +1,17 @@
+﻿@page
+@model GLMS.Views.Contract.CreatecshtmlModel
+@{
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <select name="ClientId">
+            @foreach (var c in ViewBag.Clients)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+
+        <input type="file" name="file" />
+        <button>Create</button>
+
+    </form>
+}

@@ -1,0 +1,19 @@
+﻿@page
+@model GLMS.Views.ServiceRequest.CreateModel
+@{
+    <form asp-action="Create">
+
+        <select name="ContractId">
+            @foreach (var c in ViewBag.Contracts)
+            {
+                <option value="@c.Id">@c.Status</option>
+            }
+        </select>
+
+        <input type="text" name="Description" />
+        <input type="number" name="usdAmount" />
+
+        <button>Create</button>
+
+    </form>
+}

@@ -1,0 +1,10 @@
+﻿@page
+@model GLMS.Models.Client
+@{
+    <form asp-action="Create">
+        <input asp-for="Name" placeholder="Name" />
+        <input asp-for="ContactDetails" placeholder="Contact" />
+        <input asp-for="Region" placeholder="Region" />
+        <button type="submit">Create</button>
+    </form>
+}
