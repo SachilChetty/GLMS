@@ -46,5 +46,15 @@ namespace GLMS.Controllers
         {
             return View(_context.Contracts.Include(c => c.Client).ToList());
         }
+    
+
+    public IActionResult Search(string status)
+        {
+            var results = _context.Contracts
+                .Where(c => c.Status == status)
+                .ToList();
+
+            return View("Index", results);
+        }
     }
 }
