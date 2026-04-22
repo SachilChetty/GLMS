@@ -1,4 +1,6 @@
-﻿namespace GLMS.Models
+﻿using GLMS.Models.GLMS.Models;
+
+namespace GLMS.Models
 {
     public class Contract
     {

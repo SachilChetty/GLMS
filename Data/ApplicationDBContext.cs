@@ -1,6 +1,7 @@
 ﻿namespace GLMS.Data
 {
     using GLMS.Models;
+    using GLMS.Models.GLMS.Models;
     using Microsoft.EntityFrameworkCore;
 
     public class ApplicationDbContext : DbContext
