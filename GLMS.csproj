@@ -8,19 +8,33 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.27" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.15">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Compile Remove="GLMS.API\**" />
+    <Compile Remove="GLMS.Tests\**" />
+    <EmbeddedResource Remove="GLMS.API\**" />
+    <EmbeddedResource Remove="GLMS.Tests\**" />
+    <None Remove="GLMS.API\**" />
+    <None Remove="GLMS.Tests\**" />
+    <Content Remove="GLMS.API\**" />
+    <Content Remove="GLMS.Tests\**" />
+  </ItemGroup>
 </Project>
+
